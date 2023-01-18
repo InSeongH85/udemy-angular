@@ -13,6 +13,6 @@ import { Component } from "@angular/core";
     `]
 })
 
-export class warningAlert {
+export class WarningAlertComponent {
     title = 'This is warning-alert.'
 }

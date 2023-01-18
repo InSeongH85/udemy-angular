@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { warningAlert } from './warning-alert/warningAlert.component';
-import { successAlert } from './success-alert/success-alert.component';
-import { errorAlert } from './error-alert/error-alert.component';
+import { WarningAlertComponent } from './warning-alert/warning-alert.component';
+import { SuccessAlertComponent } from './success-alert/success-alert.component';
+import { ErrorAlertComponent } from './error-alert/error-alert.component';
 
 @NgModule({
   declarations: [
-    AppComponent, warningAlert, successAlert, errorAlert
+    AppComponent, WarningAlertComponent, SuccessAlertComponent, ErrorAlertComponent
   ],
   imports: [
     BrowserModule
