@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 
 @Component({
-    selector: "warningAlert",
+    selector: "warning-alert",
     template: `
         <div class="warning">{{title}}</div>
     `,
@@ -14,5 +14,5 @@ import { Component } from "@angular/core";
 })
 
 export class warningAlert {
-    title = 'This is warningAlery.'
+    title = 'This is warning-alert.'
 }

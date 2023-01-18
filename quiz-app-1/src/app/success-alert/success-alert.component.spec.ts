@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { successAlert } from './successAlert.component';
+import { successAlert } from './success-alert.component';
 
 describe('successAlert', () => {
   let component: successAlert;
