@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   username = '';
+
+  onChangeUsername(event: Event) {
+    this.username = (<HTMLInputElement>event.target).value;
+  }
 }
