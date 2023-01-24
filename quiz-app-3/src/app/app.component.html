@@ -29,10 +29,13 @@
         Display Detials
       </button>
       <p *ngIf="showSecret">Secret Password = tuna</p>
+      <!-- *ngFor 의 i 는 0부터 시작된다.-->
       <div
-        *ngFor="let log of logs"
-        [ngStyle]="{ backgroundColor: log >= 5 ? 'blue' : 'transparent' }"
-        [ngClass]="{ 'white-text': log >= 5 }"
+        *ngFor="let log of logs; let i = index"
+        [ngStyle]="{
+          backgroundColor: i >= 4 ? 'blue' : 'transparent'
+        }"
+        [ngClass]="{ 'white-text': i >= 4 }"
       >
         {{ log }}
       </div>
