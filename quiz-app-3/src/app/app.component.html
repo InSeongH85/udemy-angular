@@ -22,6 +22,20 @@
         </li>
       </ol>
       <hr />
+      <!-- <button class="btn btn-primary" (click)="showSecret = !showSecret">
+        Display Detials
+      </button> -->
+      <button class="btn btn-primary" (click)="onToggleDetails()">
+        Display Detials
+      </button>
+      <p *ngIf="showSecret">Secret Password = tuna</p>
+      <div
+        *ngFor="let log of logs"
+        [ngStyle]="{ backgroundColor: log >= 5 ? 'blue' : 'transparent' }"
+        [ngClass]="{ 'white-text': log >= 5 }"
+      >
+        {{ log }}
+      </div>
     </div>
   </div>
 </div>

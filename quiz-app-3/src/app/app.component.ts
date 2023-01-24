@@ -5,4 +5,12 @@ import { Component } from "@angular/core";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
-export class AppComponent {}
+export class AppComponent {
+  showSecret = false;
+  logs = [];
+
+  onToggleDetails() {
+    this.showSecret = !this.showSecret;
+    this.logs.push(this.logs.length + 1);
+  }
+}
