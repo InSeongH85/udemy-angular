@@ -1,0 +1,8 @@
+<p>Child {{ fromParentData }} Component! </p>
+<div class="row">
+    <div class="col-xs-12">
+        <label for="newFurit"></label>
+        <input type="text" class="form-control" id="newFurit" #newFruit />
+        <button class="btn btn-primary" (click)="onAddFruit(newFruit.value)">Add Fruit</button>
+    </div>
+</div>
