@@ -1,6 +1,16 @@
 <p>parent component!!</p>
+<div class="container">
+    <label for="newFurit">Add Fruit</label>
+    <input type="text"
+            class="form-control"
+            id="newFurit" 
+            #newFruit />
+    <button class="btn btn-primary" (click)="onAddFruit(newFruit.value)">Add Fruit</button>    
+</div>
 <hr>
 <app-child-component 
-    *ngFor="let fruit of fruites"
-    [fromParentData]="fruit" (addFruiteEmit)="addFruite($event)"
-    ></app-child-component>
+    *ngFor="let fruit of fruites; let i = index"
+    [fruitIndex]="i"
+    [attr.data-index]="i"
+    [fromParentData]="fruit"
+    (removeFruitEvent)="onRemoveFruit($event)"></app-child-component>

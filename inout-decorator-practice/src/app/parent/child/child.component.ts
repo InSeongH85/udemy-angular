@@ -7,11 +7,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core'
 })
 
 export class ChildComponent {
-    @Input() fromParentData = ""
-    @Output() addFruiteEmit: EventEmitter<string> = new EventEmitter<string>();
-    newFruit = "";
-
-    onAddFruit(value: string) {
-        this.addFruiteEmit.emit(value);
+    @Input() fromParentData = "";
+    @Input() fruitIndex = 0;
+    @Output() removeFruitEvent: EventEmitter<number> = new EventEmitter();
+    
+    removeFruit(index: number) {
+        console.log(typeof index);
+        this.removeFruitEvent.emit(index);
     }
+
 }

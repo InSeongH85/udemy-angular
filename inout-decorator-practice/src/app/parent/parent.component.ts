@@ -7,9 +7,11 @@ import { Component } from '@angular/core'
 })
 export class ParentComponent {
     fruites = ['Apple', 'Orange', 'Banana']
-
-    addFruite(newFruit: string) {
-        this.fruites.push(newFruit)
+    onAddFruit(fruiteName: string) {
+        this.fruites.push(fruiteName);
     }
     
+    onRemoveFruit(fruitIndex: number) {
+        this.fruites.splice(fruitIndex, 1);
+    }
 }
