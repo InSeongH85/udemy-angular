@@ -14,5 +14,4 @@ export class ChildComponent {
   removeFruit(index: number) {
     this.removeFruitEvent.emit(index);
   }
-
 }
