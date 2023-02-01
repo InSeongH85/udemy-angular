@@ -1,11 +1,7 @@
 <div class="panel panel-default">
   <div class="panel-heading">{{ element.name }}</div>
   <div class="panel-body">
-    <p>
-      <strong *ngIf="element.type === 'server'" style="color: red">{{
-        element.content
-      }}</strong>
-      <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
-    </p>
+    <!-- server-element component 태그 사이에 있는 html 을 가져온다.-->
+    <ng-content></ng-content>
   </div>
 </div>
