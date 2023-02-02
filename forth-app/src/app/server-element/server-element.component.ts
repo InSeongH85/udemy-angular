@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, Input, SimpleChanges, ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: "app-server-element",
@@ -8,4 +8,38 @@ import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 })
 export class ServerElementComponent {
   @Input("srvElement") element: { type: string; name: string; content: string };
+  @Input() name: string;
+  constructor() {
+    console.log('1. constructor called.');
+  }
+  ngOnChanges(changes: SimpleChanges) {
+    console.log('2. ngOnChanges called.');
+    console.log(changes);
+  }
+  ngOnInit() {
+    console.log('3. ngOninit called.');
+  }
+  ngDoCheck() {
+    console.log('ngDoCheck!');
+  }
+
+  ngAfterContentInit() {
+    console.log('ngAfterContentInit!');
+  }
+
+  ngAfterContentChecked() {
+    console.log('ngAfterContentChecked!');
+  }
+
+  ngAfterViewInit() {
+    console.log('ngAfterViewInit!');
+  }
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked!');
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy!');
+  }
 }
