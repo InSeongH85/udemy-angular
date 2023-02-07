@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Recipe } from './recipe.model';
 @Component({
@@ -7,6 +7,9 @@ import { Recipe } from './recipe.model';
   styleUrls: ['./recipe-list.component.css'],
 })
 export class RecipeListComponent {
+
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
     new Recipe(
       'Samply Recipe',
@@ -19,4 +22,8 @@ export class RecipeListComponent {
       'https://assets.bonappetit.com/photos/62bf35ae872a6cfbb260f286/1:1/w_1600,c_limit/0701-tj-recipe-potato-v2.jpg'
     ),
   ];
+
+  onRecipeSelected(recipe: Recipe) {
+    this.recipeWasSelected.emit(recipe);
+  }
 }
