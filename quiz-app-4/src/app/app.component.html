@@ -1,15 +1,45 @@
 <div class="container">
-  <div class="row">
-    Bind it!
+  <div class="row">Bind it!</div>
+  <div class="col-xs-12">
+    <ul>
+      <li>1. Create three new components; GameControl, Odd and Even</li>
+      <li>
+        2. The GameControl Component should have buttons to start and stop the
+        Game.
+      </li>
+      <li>
+        3. When starting the game, an event (holding a incrementing number)
+        should get emiited each second (ref = setInterval())
+      </li>
+      <li>4. The event should be listenable from outside the component</li>
+      <li>
+        5. When stopping the game, no more events should get emiited
+        (clearInterval(ref))
+      </li>
+      <li>
+        6. A new Odd component should get created for every odd number emitted,
+        the same should happen for the Even Component (on even numbers)
+      </li>
+      <li>
+        7. Simple output Odd - NUMBER or Even - NUMBER in the two components
+      </li>
+      <li>
+        8. Style the element (e.g. paragraph) holding your output text
+        differently in both components.
+      </li>
+    </ul>
   </div>
-  <ul>
-    <li>1. Create three new components; GameControl, Odd and Even</li>
-    <li>2. The GameControl Component should have buttons to start and stop the Game.</li>
-    <li>3. When starting the game, an event (holding a incrementing number) should get emiited each second (ref = setInterval())</li>
-    <li>4. The event should be listenable from outside the component</li>
-    <li>5. When stopping the game, no more events should get emiited (clearInterval(ref))</li>
-    <li>6. A new Odd component should get created for every odd number emitted, the same should happen for the Even Component (on even numbers)</li>
-    <li>7. Simple output Odd - NUMBER or Even - NUMBER in the two components</li>
-    <li>8. Style the element (e.g. paragraph) holding your output text differently in both components.</li>
-  </ul>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control
+        (intervalFired)="onIntervalFired($event)"
+      ></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let odd of oddNumbers" [oddNumber]="odd"></app-odd>
+      <app-even *ngFor="let even of evenNumbers" [evenNumber]="even"></app-even>
+    </div>
+  </div>
 </div>
