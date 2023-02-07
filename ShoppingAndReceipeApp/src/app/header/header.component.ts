@@ -7,13 +7,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
-  @Output() menuEmit = new EventEmitter<string>();
-  isRecipesMenu: boolean = true;
-  goRecipes() {
-    this.menuEmit.emit('recipes');
-  }
-
-  goShoppingList() {
-    this.menuEmit.emit('shoppingList');
+  @Output() featureSelected = new EventEmitter<string>();
+  onSelect(feature: string) {
+    this.featureSelected.emit(feature);
   }
 }
