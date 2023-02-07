@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ShoppingAndReceipeApp';
+  showMenuName: string = 'recipes';
+  onMenuClick(menuName: string) {
+    this.showMenuName = menuName;
+  }
 }
