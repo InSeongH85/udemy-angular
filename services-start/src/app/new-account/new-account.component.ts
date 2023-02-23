@@ -7,7 +7,7 @@ import { LoggingService } from "../logging.services";
   templateUrl: "./new-account.component.html",
   styleUrls: ["./new-account.component.css"],
   // providers 로 Service 를 Dependency injection
-  providers: [LoggingService],
+  // providers: [LoggingService],
 })
 export class NewAccountComponent {
   // Service Injection
@@ -18,6 +18,6 @@ export class NewAccountComponent {
 
   onCreateAccount(accountName: string, accountStatus: string) {
     this.accountsService.addAccount(accountName, accountStatus);
-    this.loggingService.logStatusChange(accountStatus);
+    // this.loggingService.logStatusChange(accountStatus);
   }
 }
